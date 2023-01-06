@@ -1,6 +1,7 @@
 import { Module } from '@nestjs/common';
 import { MongooseModule } from '@nestjs/mongoose';
 import { AuthModule } from './auth/auth.module';
+import { EventsModule } from './events/events.module';
 
 import { MatchesModule } from './matches/matches.module';
 import { RolesModule } from './roles/roles.module';
@@ -15,6 +16,7 @@ import { UsersModule } from './users/users.module';
     UsersModule,
     RolesModule,
     AuthModule,
+    EventsModule,
   ],
 })
 export class AppModule {}
