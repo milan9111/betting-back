@@ -13,6 +13,7 @@ import { UsersModule } from './users/users.module';
     MongooseModule.forRoot(
       `mongodb+srv://milan9111work:12345678Aa@cluster0.a6wppdg.mongodb.net/?retryWrites=true&w=majority`,
     ),
+    //mongodb+srv://milan9111:<password>@cluster0.sb4lg88.mongodb.net/?retryWrites=true&w=majority
     UsersModule,
     RolesModule,
     AuthModule,

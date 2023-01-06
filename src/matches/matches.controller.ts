@@ -44,7 +44,7 @@ export class MatchesController {
   @Post()
   @HttpCode(HttpStatus.CREATED)
   create(@Body() createMatchDto: CreateMatchDto): Promise<Match> {
-    this.eventsGateway.server.emit('messages', {
+    this.eventsGateway.server.emit('createdMatch', {
       odds_id: createMatchDto.odds_id,
       eth_index: createMatchDto.eth_index,
       text: `Match ${createMatchDto.home_team} vs ${createMatchDto.away_team} have been created!`,
@@ -60,6 +60,12 @@ export class MatchesController {
     @Body() updateMatchDto: UpdateMatchDto,
     @Param('id') id: string,
   ): Promise<Match> {
+    this.eventsGateway.server.emit('updatedMatch', {
+      finished: updateMatchDto.finished,
+      finalResult: updateMatchDto.final_result,
+      updateTime: Date.now(),
+      text: `Prizes have been distributed!`,
+    });
     return this.matchesService.update(id, updateMatchDto);
   }
 }
