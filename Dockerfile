@@ -1,13 +1,13 @@
-FROM node:lts
+FROM node:12.13-alpine
 
-WORKDIR /app/nestjs
+WORKDIR /app
 
-EXPOSE 3000
-COPY . /app/nestjs
+COPY package*.json ./
 
 RUN npm install
-RUN npm run build
 
-USER 1000
+COPY . .
 
-CMD ["npm", "run", "start:prod"]
+COPY ./dist ./dist
+
+CMD ["npm", "run", "start:dev"]
