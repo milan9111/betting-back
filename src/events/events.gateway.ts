@@ -10,6 +10,4 @@ import { Server } from 'socket.io';
 export class EventsGateway {
   @WebSocketServer()
   server: Server;
-
-  //added logic for online chat
 }

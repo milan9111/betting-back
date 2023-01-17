@@ -6,6 +6,7 @@ import { ConfigModule } from '@nestjs/config';
 import { MatchesModule } from './matches/matches.module';
 import { RolesModule } from './roles/roles.module';
 import { UsersModule } from './users/users.module';
+import { ChatModule } from './chat/chat.module';
 
 @Module({
   imports: [
@@ -20,6 +21,7 @@ import { UsersModule } from './users/users.module';
     UsersModule,
     RolesModule,
     AuthModule,
+    ChatModule,
     EventsModule,
   ],
 })
